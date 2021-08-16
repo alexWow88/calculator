@@ -1,0 +1,47 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+}
+
+.display{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 375px;
+  height: 199px;
+  white-space: nowrap;
+}
+.keypad {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 375px;
+  height: 468px;
+  padding: 15px;
+  &__button {
+    border-radius: 50%;
+    background-color: #333333;
+    color: #7B7B7C;
+    font-size: 40px;
+    border: 1px solid #333333;
+  }
+  &__divide, &__times, &__minus, &__plus, &__equals{
+    background-color: #FF9F23;
+    color: white;
+  }
+  &__clear, &__percent, &__negPos {
+    background-color: #A5A5A5;
+    color: black;
+  }
+  &__0 {
+    text-align: start;
+    padding-left: 25px;
+    border-radius: 50px;
+    grid-column:1 / 2 span; 
+  }
+}
