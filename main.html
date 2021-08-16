@@ -9,7 +9,6 @@
 </head>
 <body>
   <div class="display">
-
   </div>
   <section class="keypad">
     <button onclick="clearFn()" class="keypad__button keypad__clear">AC</button>
@@ -33,6 +32,11 @@
     <button onclick="equalsFn()" class="keypad__button keypad__equals">=</button>
   </section>
   <script>
+    let result = 0;
+    const oneFn = (result) =>{
+      result = result + 1;
+      console.log(parseFloat(result));
+    };
   </script>
 </body>
 </html>
