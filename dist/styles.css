@@ -14,8 +14,8 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
-  width: 375px;
-  height: 199px;
+  width: 100vw;
+  height: calc(100vh - (100vw * 1.25));
   white-space: nowrap;
   color: white;
   padding: 15px;
@@ -31,8 +31,8 @@ body {
   display: grid;
   gap: 15px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  width: 375px;
-  height: 468px;
+  width: 100vw;
+  height: calc(100vw * 1.25);
   padding: 15px;
 }
 .keypad__button {
