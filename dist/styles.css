@@ -9,12 +9,22 @@ body {
 }
 
 .display {
+  font-family: Arial, Helvetica, sans-serif;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: flex-end;
   width: 375px;
   height: 199px;
   white-space: nowrap;
+  color: white;
+  padding: 15px;
+}
+.display .display-list {
+  font-size: 24px;
+}
+.display .display-result {
+  font-size: 40px;
 }
 
 .keypad {
