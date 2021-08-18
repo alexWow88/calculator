@@ -21,13 +21,68 @@ let buttonClear = document.getElementById("button-clear");
 let buttonPercent = document.getElementById("button-percent");
 
 let resultOfArr = [];
-let joinOfArr = [];
-let calcNum = [];
+let newNum = [];
+let newSymb = [];
+let finalResult = [];
 
-const attachNum = (calcNum) => {
-  resultOfArr.push(...calcNum);
+const attachNum = (newNum) => {
+  resultOfArr.push(...newNum);
+  displayResult.innerHTML = resultOfArr.join("");
+  displayList.innerHTML = resultOfArr.join("");
+  console.log(resultOfArr);
+};
+const attachSymb = (newSymb) => {
+  // if (resultOfArr.join("").includes("+")) {
+  //   let splitResultArr = resultOfArr.join("").split("+");
+  //   for (let index = 0; index < splitResultArr.length; index++){
+  //     finalResult = parseFloat(splitResultArr) + parseFloat(splitResultArr[index]);
+  //     displayResult.innerHTML = finalResult;
+  //     resultOfArr = finalResult;
+  //   }
+  // } else if (resultOfArr.join("").includes("-")) {
+  //   let splitResultArr = resultOfArr.join("").split("-");
+  //   for (let index = 0; index < splitResultArr.length; index++){
+  //     const finalResult = parseFloat(splitResultArr) - parseFloat(splitResultArr[index]);
+  //     displayResult.innerHTML = finalResult;
+  //     resultOfArr = finalResult;
+  //   }
+  // } else if (resultOfArr.join("").includes("*")) {
+  //   let splitResultArr = resultOfArr.join("").split("*");
+  //   for (let index = 0; index < splitResultArr.length; index++){
+  //     const finalResult = parseFloat(splitResultArr) * parseFloat(splitResultArr[index]);
+  //     displayResult.innerHTML = finalResult;
+  //     resultOfArr = finalResult;
+  //   }
+  // }
+  resultOfArr.push(...newSymb);
   displayResult.innerHTML = resultOfArr;
   displayList.innerHTML = resultOfArr.join("");
+};
+const clearDisplay = () => {
+  resultOfArr = [];
+  displayResult.innerHTML = resultOfArr;
+  displayList.innerHTML = resultOfArr.join("");
+};
+const calcResult = () => {
+  if (resultOfArr.join("").includes("+")) {
+    let splitResultArr = resultOfArr.join("").split("+");
+    for (let index = 0; index < splitResultArr.length; index++){
+      const finalResult = parseFloat(splitResultArr) + parseFloat(splitResultArr[index]);
+      displayResult.innerHTML = finalResult;
+    }
+  } else if (resultOfArr.join("").includes("-")) {
+    let splitResultArr = resultOfArr.join("").split("-");
+    for (let index = 0; index < splitResultArr.length; index++){
+      const finalResult = parseFloat(splitResultArr) - parseFloat(splitResultArr[index]);
+      displayResult.innerHTML = finalResult;
+    }
+  } else if (resultOfArr.join("").includes("*")) {
+    let splitResultArr = resultOfArr.join("").split("*");
+    for (let index = 0; index < splitResultArr.length; index++){
+      const finalResult = parseFloat(splitResultArr) * parseFloat(splitResultArr[index]);
+      displayResult.innerHTML = finalResult;
+    }
+  }
 };
 
 buttonOne.addEventListener("click", function () {attachNum("1")});
@@ -40,3 +95,9 @@ buttonSeven.addEventListener("click", function () {attachNum("7")});
 buttonEight.addEventListener("click", function () {attachNum("8")});
 buttonNine.addEventListener("click", function () {attachNum("9")});
 buttonZero.addEventListener("click", function () {attachNum("0")});
+buttonTimes.addEventListener("click", function () {attachSymb("*")});
+buttonMinus.addEventListener("click", function () {attachSymb("-")});
+buttonPlus.addEventListener("click", function () {attachSymb("+")});
+buttonDivide.addEventListener("click", function () {attachSymb("/")});
+buttonClear.addEventListener("click", clearDisplay);
+buttonEquals.addEventListener("click", calcResult);
