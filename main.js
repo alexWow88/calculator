@@ -21,24 +21,31 @@ let buttonClear = document.getElementById("button-clear");
 let buttonPercent = document.getElementById("button-percent");
 
 let resultOfArr = [];
+let listOfArr = [];
 let newNum = [];
 let newSymb = [];
 let finalResult = [];
 
 const attachNum = (newNum) => {
   resultOfArr.push(...newNum);
+  listOfArr.push(...newNum);
+  displayResult.innerHTML = resultOfArr.join("");
+  displayList.innerHTML = listOfArr.join("");
+};
+const attachDot = (newNum) => {
+  resultOfArr.push(...newNum);
   displayResult.innerHTML = resultOfArr.join("");
   displayList.innerHTML = resultOfArr.join("");
-  console.log(resultOfArr);
 };
 const attachSymb = (newSymb) => {
-  // if (resultOfArr.join("").includes("+")) {
-  //   let splitResultArr = resultOfArr.join("").split("+");
-  //   for (let index = 0; index < splitResultArr.length; index++){
-  //     finalResult = parseFloat(splitResultArr) + parseFloat(splitResultArr[index]);
-  //     displayResult.innerHTML = finalResult;
-  //     resultOfArr = finalResult;
-  //   }
+  if (resultOfArr.join("").includes("+")) {
+    let splitResultArr = resultOfArr.join("").split("+");
+    for (let index = 0; index < splitResultArr.length; index++){
+      resultOfArr = parseFloat(splitResultArr) + parseFloat(splitResultArr[index]);
+      displayResult.innerHTML = resultOfArr;
+      console.log(resultOfArr);
+    }
+  };
   // } else if (resultOfArr.join("").includes("-")) {
   //   let splitResultArr = resultOfArr.join("").split("-");
   //   for (let index = 0; index < splitResultArr.length; index++){
@@ -54,21 +61,43 @@ const attachSymb = (newSymb) => {
   //     resultOfArr = finalResult;
   //   }
   // }
+  
   resultOfArr.push(...newSymb);
-  displayResult.innerHTML = resultOfArr;
-  displayList.innerHTML = resultOfArr.join("");
+  listOfArr.push(...newSymb);
+  displayList.innerHTML = listOfArr.join("");
 };
 const clearDisplay = () => {
   resultOfArr = [];
+  listOfArr = [];
   displayResult.innerHTML = resultOfArr;
-  displayList.innerHTML = resultOfArr.join("");
+  displayList.innerHTML = listOfArr;
+};
+const negPosResult = () => {
+  resultOfArr = resultOfArr * (-1);
+  listOfArr = resultOfArr;
+  displayResult.innerHTML = resultOfArr;
+  displayList.innerHTML = listOfArr;
+};
+const percentResult = () => {
+  console.log(resultOfArr);
+  if (resultOfArr.join("").includes(".")) {
+  resultOfArr = resultOfArr.join("") * 100;
+  listOfArr = resultOfArr;
+  displayResult.innerHTML = resultOfArr;
+  displayList.innerHTML = listOfArr;
+  } else {
+  listOfArr = resultOfArr;
+  displayResult.innerHTML = resultOfArr;
+  displayList.innerHTML = listOfArr;
+  }
 };
 const calcResult = () => {
   if (resultOfArr.join("").includes("+")) {
     let splitResultArr = resultOfArr.join("").split("+");
     for (let index = 0; index < splitResultArr.length; index++){
-      const finalResult = parseFloat(splitResultArr) + parseFloat(splitResultArr[index]);
-      displayResult.innerHTML = finalResult;
+      resultOfArr = parseFloat(splitResultArr) + parseFloat(splitResultArr[index]);
+      displayResult.innerHTML = resultOfArr;
+      console.log(resultOfArr);
     }
   } else if (resultOfArr.join("").includes("-")) {
     let splitResultArr = resultOfArr.join("").split("-");
@@ -101,3 +130,6 @@ buttonPlus.addEventListener("click", function () {attachSymb("+")});
 buttonDivide.addEventListener("click", function () {attachSymb("/")});
 buttonClear.addEventListener("click", clearDisplay);
 buttonEquals.addEventListener("click", calcResult);
+buttonDot.addEventListener("click", function () {attachDot(".")});
+buttonNegPos.addEventListener("click", negPosResult);
+buttonPercent.addEventListener("click", percentResult);
