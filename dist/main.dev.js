@@ -63,20 +63,36 @@ var attachSymb = function attachSymb(newSymb) {
     var splitResultArr = resultOfArr.join("").split("+"); //for (let index = 0; index < splitResultArr.length; index++){
 
     resultOfArr = parseFloat(splitResultArr[0]) + parseFloat(splitResultArr[1]);
-    displayResult.innerHTML = resultOfArr; //resultOfArr = String(resultOfArr);
-    //console.log(resultOfArr);
+    displayResult.innerHTML = resultOfArr;
+    resultOfArr = String(resultOfArr);
+    resultOfArr = resultOfArr.split("");
+    console.log(resultOfArr); //return resultOfArr;
+    //}
+  } else if (resultOfArr.join("").includes("-")) {
+    var _splitResultArr = resultOfArr.join("").split("-");
 
-    return resultOfArr; //}
-  }
+    resultOfArr = parseFloat(_splitResultArr[0]) - parseFloat(_splitResultArr[1]);
+    displayResult.innerHTML = resultOfArr;
+    resultOfArr = String(resultOfArr);
+    resultOfArr = resultOfArr.split("");
+    console.log(resultOfArr);
+  } else if (resultOfArr.join("").includes("*")) {
+    var _splitResultArr2 = resultOfArr.join("").split("*");
 
-  ; // } else if (resultOfArr.join("").includes("-")) {
-  //   let splitResultArr = resultOfArr.join("").split("-");
-  //   for (let index = 0; index < splitResultArr.length; index++){
-  //     const finalResult = parseFloat(splitResultArr) - parseFloat(splitResultArr[index]);
-  //     displayResult.innerHTML = finalResult;
-  //     resultOfArr = finalResult;
-  //   }
-  // } else if (resultOfArr.join("").includes("*")) {
+    resultOfArr = parseFloat(_splitResultArr2[0]) * parseFloat(_splitResultArr2[1]);
+    displayResult.innerHTML = resultOfArr;
+    resultOfArr = String(resultOfArr);
+    resultOfArr = resultOfArr.split("");
+    console.log(resultOfArr);
+  } else if (resultOfArr.join("").includes("/")) {
+    var _splitResultArr3 = resultOfArr.join("").split("/");
+
+    resultOfArr = parseFloat(_splitResultArr3[0]) / parseFloat(_splitResultArr3[1]);
+    displayResult.innerHTML = resultOfArr;
+    resultOfArr = String(resultOfArr);
+    resultOfArr = resultOfArr.split("");
+    console.log(resultOfArr);
+  } // } else if (resultOfArr.join("").includes("*")) {
   //   let splitResultArr = resultOfArr.join("").split("*");
   //   for (let index = 0; index < splitResultArr.length; index++){
   //     const finalResult = parseFloat(splitResultArr) * parseFloat(splitResultArr[index]);
@@ -85,6 +101,7 @@ var attachSymb = function attachSymb(newSymb) {
   //   }
   // }
   // resultOfArr = resultOfArr.toString();
+
 
   console.log(resultOfArr);
 
@@ -137,20 +154,28 @@ var calcResult = function calcResult() {
       console.log(resultOfArr);
     }
   } else if (resultOfArr.join("").includes("-")) {
-    var _splitResultArr = resultOfArr.join("").split("-");
+    var _splitResultArr4 = resultOfArr.join("").split("-");
 
-    for (var _index = 0; _index < _splitResultArr.length; _index++) {
-      var _finalResult = parseFloat(_splitResultArr) - parseFloat(_splitResultArr[_index]);
+    for (var _index = 0; _index < _splitResultArr4.length; _index++) {
+      var _finalResult = parseFloat(_splitResultArr4) - parseFloat(_splitResultArr4[_index]);
 
       displayResult.innerHTML = _finalResult;
     }
   } else if (resultOfArr.join("").includes("*")) {
-    var _splitResultArr2 = resultOfArr.join("").split("*");
+    var _splitResultArr5 = resultOfArr.join("").split("*");
 
-    for (var _index2 = 0; _index2 < _splitResultArr2.length; _index2++) {
-      var _finalResult2 = parseFloat(_splitResultArr2) * parseFloat(_splitResultArr2[_index2]);
+    for (var _index2 = 0; _index2 < _splitResultArr5.length; _index2++) {
+      var _finalResult2 = parseFloat(_splitResultArr5) * parseFloat(_splitResultArr5[_index2]);
 
       displayResult.innerHTML = _finalResult2;
+    }
+  } else if (resultOfArr.join("").includes("/")) {
+    var _splitResultArr6 = resultOfArr.join("").split("/");
+
+    for (var _index3 = 0; _index3 < _splitResultArr6.length; _index3++) {
+      var _finalResult3 = parseFloat(_splitResultArr6) / parseFloat(_splitResultArr6[_index3]);
+
+      displayResult.innerHTML = _finalResult3;
     }
   }
 };
