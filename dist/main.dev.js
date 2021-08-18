@@ -83,6 +83,9 @@ var attachSymb = function attachSymb(newSymb) {
   //     resultOfArr = finalResult;
   //   }
   // }
+  // resultOfArr = resultOfArr.toString();
+
+  console.log(resultOfArr);
 
   (_resultOfArr3 = resultOfArr).push.apply(_resultOfArr3, _toConsumableArray(newSymb));
 
@@ -114,6 +117,7 @@ var percentResult = function percentResult() {
     displayResult.innerHTML = resultOfArr;
     displayList.innerHTML = listOfArr;
   } else {
+    resultOfArr = resultOfArr * 100;
     listOfArr = resultOfArr;
     displayResult.innerHTML = resultOfArr;
     displayList.innerHTML = listOfArr;

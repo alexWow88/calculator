@@ -61,7 +61,8 @@ const attachSymb = (newSymb) => {
   //     resultOfArr = finalResult;
   //   }
   // }
-  
+  // resultOfArr = resultOfArr.toString();
+  console.log(resultOfArr);
   resultOfArr.push(...newSymb);
   listOfArr.push(...newSymb);
   displayList.innerHTML = listOfArr.join("");
@@ -86,6 +87,7 @@ const percentResult = () => {
   displayResult.innerHTML = resultOfArr;
   displayList.innerHTML = listOfArr;
   } else {
+  resultOfArr = resultOfArr * 100;
   listOfArr = resultOfArr;
   displayResult.innerHTML = resultOfArr;
   displayList.innerHTML = listOfArr;
