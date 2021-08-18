@@ -40,24 +40,27 @@ var attachNum = function attachNum(newNum) {
 
   (_resultOfArr = resultOfArr).push.apply(_resultOfArr, _toConsumableArray(newNum));
 
-  (_listOfArr = listOfArr).push.apply(_listOfArr, _toConsumableArray(newNum));
+  (_listOfArr = listOfArr).push.apply(_listOfArr, _toConsumableArray(newNum)); //displayResult.innerHTML = resultOfArr.join("");
 
-  displayResult.innerHTML = resultOfArr.join("");
+
   displayList.innerHTML = listOfArr.join("");
   console.log(resultOfArr);
 };
 
 var attachDot = function attachDot(newNum) {
-  var _resultOfArr2;
+  var _resultOfArr2, _listOfArr2;
 
   (_resultOfArr2 = resultOfArr).push.apply(_resultOfArr2, _toConsumableArray(newNum));
 
-  displayResult.innerHTML = resultOfArr.join("");
+  (_listOfArr2 = listOfArr).push.apply(_listOfArr2, _toConsumableArray(newNum)); //displayResult.innerHTML = resultOfArr.join("");
+
+
   displayList.innerHTML = resultOfArr.join("");
+  console.log(resultOfArr);
 };
 
 var attachSymb = function attachSymb(newSymb) {
-  var _resultOfArr3, _listOfArr2;
+  var _resultOfArr3, _listOfArr3;
 
   if (resultOfArr.join("").includes("+")) {
     var splitResultArr = resultOfArr.join("").split("+"); //for (let index = 0; index < splitResultArr.length; index++){
@@ -109,7 +112,7 @@ var attachSymb = function attachSymb(newSymb) {
 
   console.log(resultOfArr);
 
-  (_listOfArr2 = listOfArr).push.apply(_listOfArr2, _toConsumableArray(newSymb));
+  (_listOfArr3 = listOfArr).push.apply(_listOfArr3, _toConsumableArray(newSymb));
 
   displayList.innerHTML = listOfArr.join("");
 };

@@ -29,14 +29,16 @@ let finalResult = [];
 const attachNum = (newNum) => {
   resultOfArr.push(...newNum);
   listOfArr.push(...newNum);
-  displayResult.innerHTML = resultOfArr.join("");
+  //displayResult.innerHTML = resultOfArr.join("");
   displayList.innerHTML = listOfArr.join("");
   console.log(resultOfArr);
 };
 const attachDot = (newNum) => {
   resultOfArr.push(...newNum);
-  displayResult.innerHTML = resultOfArr.join("");
+  listOfArr.push(...newNum);
+  //displayResult.innerHTML = resultOfArr.join("");
   displayList.innerHTML = resultOfArr.join("");
+  console.log(resultOfArr);
 };
 const attachSymb = (newSymb) => {
   if (resultOfArr.join("").includes("+")) {
