@@ -21,6 +21,8 @@ body {
 }
 .display .display-list {
   font-size: 24px;
+  height: 60px;
+  word-wrap: normal;
 }
 .display .display-result {
   font-size: 40px;
@@ -54,4 +56,24 @@ body {
   padding-left: 25px;
   border-radius: 50px;
   grid-column: 1/2 span;
+}
+
+@media only screen and (min-width: 415px) {
+  .calculator {
+    border: 1px solid white;
+    width: 414px;
+  }
+
+  .display {
+    width: 414px;
+    height: 183px;
+  }
+  .display .display-list {
+    height: 120px;
+  }
+
+  .keypad {
+    width: 414px;
+    height: 517px;
+  }
 }

@@ -30,13 +30,13 @@ const attachNum = (calcNum) => {
   displayList.innerHTML = resultOfArr.join("");
 };
 
-buttonOne.addEventListener("click", attachNum("1"));
-buttonTwo.addEventListener("click", attachNum("2"));
-buttonThree.addEventListener("click", attachNum("3"));
-buttonFour.addEventListener("click", attachNum("4"));
-buttonFive.addEventListener("click", attachNum("5"));
-buttonSix.addEventListener("click", attachNum("6"));
-buttonSeven.addEventListener("click", attachNum("7"));
-buttonEight.addEventListener("click", attachNum("8"));
-buttonNine.addEventListener("click", attachNum("9"));
-buttonZero.addEventListener("click", attachNum("0"));
+buttonOne.addEventListener("click", function () {attachNum("1")});
+buttonTwo.addEventListener("click", function () {attachNum("2")});
+buttonThree.addEventListener("click", function () {attachNum("3")});
+buttonFour.addEventListener("click", function () {attachNum("4")});
+buttonFive.addEventListener("click", function () {attachNum("5")});
+buttonSix.addEventListener("click", function () {attachNum("6")});
+buttonSeven.addEventListener("click", function () {attachNum("7")});
+buttonEight.addEventListener("click", function () {attachNum("8")});
+buttonNine.addEventListener("click", function () {attachNum("9")});
+buttonZero.addEventListener("click", function () {attachNum("0")});
