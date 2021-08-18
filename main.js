@@ -31,6 +31,7 @@ const attachNum = (newNum) => {
   listOfArr.push(...newNum);
   displayResult.innerHTML = resultOfArr.join("");
   displayList.innerHTML = listOfArr.join("");
+  console.log(resultOfArr);
 };
 const attachDot = (newNum) => {
   resultOfArr.push(...newNum);
@@ -40,11 +41,13 @@ const attachDot = (newNum) => {
 const attachSymb = (newSymb) => {
   if (resultOfArr.join("").includes("+")) {
     let splitResultArr = resultOfArr.join("").split("+");
-    for (let index = 0; index < splitResultArr.length; index++){
-      resultOfArr = parseFloat(splitResultArr) + parseFloat(splitResultArr[index]);
+    //for (let index = 0; index < splitResultArr.length; index++){
+      resultOfArr = parseFloat(splitResultArr[0]) + parseFloat(splitResultArr[1]);
       displayResult.innerHTML = resultOfArr;
-      console.log(resultOfArr);
-    }
+      //resultOfArr = String(resultOfArr);
+      //console.log(resultOfArr);
+      return resultOfArr;
+    //}
   };
   // } else if (resultOfArr.join("").includes("-")) {
   //   let splitResultArr = resultOfArr.join("").split("-");
@@ -64,6 +67,7 @@ const attachSymb = (newSymb) => {
   // resultOfArr = resultOfArr.toString();
   console.log(resultOfArr);
   resultOfArr.push(...newSymb);
+  console.log(resultOfArr);
   listOfArr.push(...newSymb);
   displayList.innerHTML = listOfArr.join("");
 };

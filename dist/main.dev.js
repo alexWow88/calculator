@@ -44,6 +44,7 @@ var attachNum = function attachNum(newNum) {
 
   displayResult.innerHTML = resultOfArr.join("");
   displayList.innerHTML = listOfArr.join("");
+  console.log(resultOfArr);
 };
 
 var attachDot = function attachDot(newNum) {
@@ -59,13 +60,13 @@ var attachSymb = function attachSymb(newSymb) {
   var _resultOfArr3, _listOfArr2;
 
   if (resultOfArr.join("").includes("+")) {
-    var splitResultArr = resultOfArr.join("").split("+");
+    var splitResultArr = resultOfArr.join("").split("+"); //for (let index = 0; index < splitResultArr.length; index++){
 
-    for (var index = 0; index < splitResultArr.length; index++) {
-      resultOfArr = parseFloat(splitResultArr) + parseFloat(splitResultArr[index]);
-      displayResult.innerHTML = resultOfArr;
-      console.log(resultOfArr);
-    }
+    resultOfArr = parseFloat(splitResultArr[0]) + parseFloat(splitResultArr[1]);
+    displayResult.innerHTML = resultOfArr; //resultOfArr = String(resultOfArr);
+    //console.log(resultOfArr);
+
+    return resultOfArr; //}
   }
 
   ; // } else if (resultOfArr.join("").includes("-")) {
@@ -88,6 +89,8 @@ var attachSymb = function attachSymb(newSymb) {
   console.log(resultOfArr);
 
   (_resultOfArr3 = resultOfArr).push.apply(_resultOfArr3, _toConsumableArray(newSymb));
+
+  console.log(resultOfArr);
 
   (_listOfArr2 = listOfArr).push.apply(_listOfArr2, _toConsumableArray(newSymb));
 
