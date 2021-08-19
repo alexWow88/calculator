@@ -127,20 +127,27 @@ var negPosResult = function negPosResult() {
     displayList.innerHTML = listOfArr.join("");
     console.log(resultOfArr);
   } else if (resultOfArr.join("").includes("-")) {
-    var _listOfArr5;
+    console.log(resultOfArr);
 
     var _splitResultArr4 = resultOfArr.join("").split("-");
 
-    resultOfArr = (parseFloat(_splitResultArr4[0]) - parseFloat(_splitResultArr4[1])) * -1;
-    displayResult.innerHTML = resultOfArr;
-    resultOfArr = String(resultOfArr);
-    listOfArr = [];
+    if (_splitResultArr4[0] === "" && _splitResultArr4.length === 2) {
+      resultOfArr = parseFloat(_splitResultArr4[1]);
+    } else {
+      var _listOfArr5;
 
-    (_listOfArr5 = listOfArr).push.apply(_listOfArr5, _toConsumableArray(resultOfArr));
+      console.log(_splitResultArr4);
+      resultOfArr = (parseFloat(_splitResultArr4[0]) - parseFloat(_splitResultArr4[1])) * -1;
+      displayResult.innerHTML = resultOfArr;
+      resultOfArr = String(resultOfArr);
+      listOfArr = [];
 
-    resultOfArr = resultOfArr.split("");
-    displayList.innerHTML = listOfArr.join("");
-    console.log(resultOfArr);
+      (_listOfArr5 = listOfArr).push.apply(_listOfArr5, _toConsumableArray(resultOfArr));
+
+      resultOfArr = resultOfArr.split("");
+      displayList.innerHTML = listOfArr.join("");
+      console.log(resultOfArr);
+    }
   } else if (resultOfArr.join("").includes("*")) {
     var _listOfArr6;
 
