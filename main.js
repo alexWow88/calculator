@@ -29,28 +29,23 @@ let finalResult = [];
 const attachNum = (newNum) => {
   resultOfArr.push(...newNum);
   listOfArr.push(...newNum);
-  //displayResult.innerHTML = resultOfArr.join("");
   displayList.innerHTML = listOfArr.join("");
   console.log(resultOfArr);
 };
 const attachDot = (newNum) => {
   resultOfArr.push(...newNum);
   listOfArr.push(...newNum);
-  //displayResult.innerHTML = resultOfArr.join("");
   displayList.innerHTML = resultOfArr.join("");
   console.log(resultOfArr);
 };
 const attachSymb = (newSymb) => {
   if (resultOfArr.join("").includes("+")) {
     let splitResultArr = resultOfArr.join("").split("+");
-    //for (let index = 0; index < splitResultArr.length; index++){
       resultOfArr = parseFloat(splitResultArr[0]) + parseFloat(splitResultArr[1]);
       displayResult.innerHTML = resultOfArr;
       resultOfArr = String(resultOfArr);
       resultOfArr = resultOfArr.split("");
       console.log(resultOfArr);
-      //return resultOfArr;
-    //}
   } else if (resultOfArr.join("").includes("-")) {
       let splitResultArr = resultOfArr.join("").split("-");
         resultOfArr = parseFloat(splitResultArr[0]) - parseFloat(splitResultArr[1]);
@@ -73,15 +68,6 @@ const attachSymb = (newSymb) => {
         resultOfArr = resultOfArr.split("");
         console.log(resultOfArr);
     }
-  // } else if (resultOfArr.join("").includes("*")) {
-  //   let splitResultArr = resultOfArr.join("").split("*");
-  //   for (let index = 0; index < splitResultArr.length; index++){
-  //     const finalResult = parseFloat(splitResultArr) * parseFloat(splitResultArr[index]);
-  //     displayResult.innerHTML = finalResult;
-  //     resultOfArr = finalResult;
-  //   }
-  // }
-  // resultOfArr = resultOfArr.toString();
   console.log(resultOfArr);
   resultOfArr.push(...newSymb);
   console.log(resultOfArr);
@@ -117,29 +103,44 @@ const percentResult = () => {
 const calcResult = () => {
   if (resultOfArr.join("").includes("+")) {
     let splitResultArr = resultOfArr.join("").split("+");
-    for (let index = 0; index < splitResultArr.length; index++){
-      resultOfArr = parseFloat(splitResultArr) + parseFloat(splitResultArr[index]);
+      resultOfArr = parseFloat(splitResultArr[0]) + parseFloat(splitResultArr[1]);
       displayResult.innerHTML = resultOfArr;
+      resultOfArr = String(resultOfArr);
+      listOfArr = [];
+      listOfArr.push(...resultOfArr);
+      resultOfArr = resultOfArr.split("");
+      displayList.innerHTML = listOfArr.join("");
       console.log(resultOfArr);
-    }
   } else if (resultOfArr.join("").includes("-")) {
     let splitResultArr = resultOfArr.join("").split("-");
-    for (let index = 0; index < splitResultArr.length; index++){
-      const finalResult = parseFloat(splitResultArr) - parseFloat(splitResultArr[index]);
-      displayResult.innerHTML = finalResult;
-    }
+      resultOfArr = parseFloat(splitResultArr[0]) - parseFloat(splitResultArr[1]);
+      displayResult.innerHTML = resultOfArr;
+      resultOfArr = String(resultOfArr);
+      listOfArr = [];
+      listOfArr.push(...resultOfArr);
+      resultOfArr = resultOfArr.split("");
+      displayList.innerHTML = listOfArr.join("");
+      console.log(resultOfArr);
   } else if (resultOfArr.join("").includes("*")) {
     let splitResultArr = resultOfArr.join("").split("*");
-    for (let index = 0; index < splitResultArr.length; index++){
-      const finalResult = parseFloat(splitResultArr) * parseFloat(splitResultArr[index]);
-      displayResult.innerHTML = finalResult;
-    }
+      resultOfArr = parseFloat(splitResultArr[0]) * parseFloat(splitResultArr[1]);
+      displayResult.innerHTML = resultOfArr;
+      resultOfArr = String(resultOfArr);
+      listOfArr = [];
+      listOfArr.push(...resultOfArr);
+      resultOfArr = resultOfArr.split("");
+      displayList.innerHTML = listOfArr.join("");
+      console.log(resultOfArr);
   } else if (resultOfArr.join("").includes("/")) {
     let splitResultArr = resultOfArr.join("").split("/");
-    for (let index = 0; index < splitResultArr.length; index++){
-      const finalResult = parseFloat(splitResultArr) / parseFloat(splitResultArr[index]);
-      displayResult.innerHTML = finalResult;
-    }
+      resultOfArr = parseFloat(splitResultArr[0]) / parseFloat(splitResultArr[1]);
+      displayResult.innerHTML = resultOfArr;
+      resultOfArr = String(resultOfArr);
+      listOfArr = [];
+      listOfArr.push(...resultOfArr);
+      resultOfArr = resultOfArr.split("");
+      displayList.innerHTML = listOfArr.join("");
+      console.log(resultOfArr);
   }
 };
 
