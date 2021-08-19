@@ -131,13 +131,13 @@ var negPosResult = function negPosResult() {
 
     var _splitResultArr4 = resultOfArr.join("").split("-");
 
-    if (_splitResultArr4[0] === "" && _splitResultArr4.length === 2) {
-      resultOfArr = parseFloat(_splitResultArr4[1]);
-    } else {
+    console.log(_splitResultArr4);
+
+    if (_splitResultArr4[0] == "" && _splitResultArr4.length === 2) {
       var _listOfArr5;
 
-      console.log(_splitResultArr4);
-      resultOfArr = (parseFloat(_splitResultArr4[0]) - parseFloat(_splitResultArr4[1])) * -1;
+      resultOfArr = parseFloat(_splitResultArr4[1]);
+      console.log(resultOfArr);
       displayResult.innerHTML = resultOfArr;
       resultOfArr = String(resultOfArr);
       listOfArr = [];
@@ -147,28 +147,27 @@ var negPosResult = function negPosResult() {
       resultOfArr = resultOfArr.split("");
       displayList.innerHTML = listOfArr.join("");
       console.log(resultOfArr);
+    } else {
+      var _listOfArr6;
+
+      console.log(_splitResultArr4);
+      resultOfArr = (parseFloat(_splitResultArr4[0]) - parseFloat(_splitResultArr4[1])) * -1;
+      displayResult.innerHTML = resultOfArr;
+      resultOfArr = String(resultOfArr);
+      listOfArr = [];
+
+      (_listOfArr6 = listOfArr).push.apply(_listOfArr6, _toConsumableArray(resultOfArr));
+
+      resultOfArr = resultOfArr.split("");
+      displayList.innerHTML = listOfArr.join("");
+      console.log(resultOfArr);
     }
   } else if (resultOfArr.join("").includes("*")) {
-    var _listOfArr6;
+    var _listOfArr7;
 
     var _splitResultArr5 = resultOfArr.join("").split("*");
 
     resultOfArr = parseFloat(_splitResultArr5[0]) * parseFloat(_splitResultArr5[1]) * -1;
-    displayResult.innerHTML = resultOfArr;
-    resultOfArr = String(resultOfArr);
-    listOfArr = [];
-
-    (_listOfArr6 = listOfArr).push.apply(_listOfArr6, _toConsumableArray(resultOfArr));
-
-    resultOfArr = resultOfArr.split("");
-    displayList.innerHTML = listOfArr.join("");
-    console.log(resultOfArr);
-  } else if (resultOfArr.join("").includes("/")) {
-    var _listOfArr7;
-
-    var _splitResultArr6 = resultOfArr.join("").split("/");
-
-    resultOfArr = parseFloat(_splitResultArr6[0]) / parseFloat(_splitResultArr6[1]) * -1;
     displayResult.innerHTML = resultOfArr;
     resultOfArr = String(resultOfArr);
     listOfArr = [];
@@ -178,10 +177,12 @@ var negPosResult = function negPosResult() {
     resultOfArr = resultOfArr.split("");
     displayList.innerHTML = listOfArr.join("");
     console.log(resultOfArr);
-  } else {
+  } else if (resultOfArr.join("").includes("/")) {
     var _listOfArr8;
 
-    resultOfArr = parseFloat(resultOfArr.join("")) * -1;
+    var _splitResultArr6 = resultOfArr.join("").split("/");
+
+    resultOfArr = parseFloat(_splitResultArr6[0]) / parseFloat(_splitResultArr6[1]) * -1;
     displayResult.innerHTML = resultOfArr;
     resultOfArr = String(resultOfArr);
     listOfArr = [];
@@ -191,15 +192,10 @@ var negPosResult = function negPosResult() {
     resultOfArr = resultOfArr.split("");
     displayList.innerHTML = listOfArr.join("");
     console.log(resultOfArr);
-  }
-};
-
-var percentResult = function percentResult() {
-  if (resultOfArr.join("").includes("+")) {
+  } else {
     var _listOfArr9;
 
-    var splitResultArr = resultOfArr.join("").split("+");
-    resultOfArr = (parseFloat(splitResultArr[0]) + parseFloat(splitResultArr[1])) * 100;
+    resultOfArr = parseFloat(resultOfArr.join("")) * -1;
     displayResult.innerHTML = resultOfArr;
     resultOfArr = String(resultOfArr);
     listOfArr = [];
@@ -209,12 +205,15 @@ var percentResult = function percentResult() {
     resultOfArr = resultOfArr.split("");
     displayList.innerHTML = listOfArr.join("");
     console.log(resultOfArr);
-  } else if (resultOfArr.join("").includes("-")) {
+  }
+};
+
+var percentResult = function percentResult() {
+  if (resultOfArr.join("").includes("+")) {
     var _listOfArr10;
 
-    var _splitResultArr7 = resultOfArr.join("").split("-");
-
-    resultOfArr = (parseFloat(_splitResultArr7[0]) - parseFloat(_splitResultArr7[1])) * 100;
+    var splitResultArr = resultOfArr.join("").split("+");
+    resultOfArr = (parseFloat(splitResultArr[0]) + parseFloat(splitResultArr[1])) * 100;
     displayResult.innerHTML = resultOfArr;
     resultOfArr = String(resultOfArr);
     listOfArr = [];
@@ -224,12 +223,12 @@ var percentResult = function percentResult() {
     resultOfArr = resultOfArr.split("");
     displayList.innerHTML = listOfArr.join("");
     console.log(resultOfArr);
-  } else if (resultOfArr.join("").includes("*")) {
+  } else if (resultOfArr.join("").includes("-")) {
     var _listOfArr11;
 
-    var _splitResultArr8 = resultOfArr.join("").split("*");
+    var _splitResultArr7 = resultOfArr.join("").split("-");
 
-    resultOfArr = parseFloat(_splitResultArr8[0]) * parseFloat(_splitResultArr8[1]) * 100;
+    resultOfArr = (parseFloat(_splitResultArr7[0]) - parseFloat(_splitResultArr7[1])) * 100;
     displayResult.innerHTML = resultOfArr;
     resultOfArr = String(resultOfArr);
     listOfArr = [];
@@ -239,12 +238,12 @@ var percentResult = function percentResult() {
     resultOfArr = resultOfArr.split("");
     displayList.innerHTML = listOfArr.join("");
     console.log(resultOfArr);
-  } else if (resultOfArr.join("").includes("/")) {
+  } else if (resultOfArr.join("").includes("*")) {
     var _listOfArr12;
 
-    var _splitResultArr9 = resultOfArr.join("").split("/");
+    var _splitResultArr8 = resultOfArr.join("").split("*");
 
-    resultOfArr = parseFloat(_splitResultArr9[0]) / parseFloat(_splitResultArr9[1]) * 100;
+    resultOfArr = parseFloat(_splitResultArr8[0]) * parseFloat(_splitResultArr8[1]) * 100;
     displayResult.innerHTML = resultOfArr;
     resultOfArr = String(resultOfArr);
     listOfArr = [];
@@ -254,15 +253,30 @@ var percentResult = function percentResult() {
     resultOfArr = resultOfArr.split("");
     displayList.innerHTML = listOfArr.join("");
     console.log(resultOfArr);
-  } else {
+  } else if (resultOfArr.join("").includes("/")) {
     var _listOfArr13;
+
+    var _splitResultArr9 = resultOfArr.join("").split("/");
+
+    resultOfArr = parseFloat(_splitResultArr9[0]) / parseFloat(_splitResultArr9[1]) * 100;
+    displayResult.innerHTML = resultOfArr;
+    resultOfArr = String(resultOfArr);
+    listOfArr = [];
+
+    (_listOfArr13 = listOfArr).push.apply(_listOfArr13, _toConsumableArray(resultOfArr));
+
+    resultOfArr = resultOfArr.split("");
+    displayList.innerHTML = listOfArr.join("");
+    console.log(resultOfArr);
+  } else {
+    var _listOfArr14;
 
     resultOfArr = parseFloat(resultOfArr.join("")) * 100;
     displayResult.innerHTML = resultOfArr;
     resultOfArr = String(resultOfArr);
     listOfArr = [];
 
-    (_listOfArr13 = listOfArr).push.apply(_listOfArr13, _toConsumableArray(resultOfArr));
+    (_listOfArr14 = listOfArr).push.apply(_listOfArr14, _toConsumableArray(resultOfArr));
 
     resultOfArr = resultOfArr.split("");
     displayList.innerHTML = listOfArr.join("");
@@ -296,25 +310,10 @@ var percentResult = function percentResult() {
 
 var calcResult = function calcResult() {
   if (resultOfArr.join("").includes("+")) {
-    var _listOfArr14;
+    var _listOfArr15;
 
     var splitResultArr = resultOfArr.join("").split("+");
     resultOfArr = parseFloat(splitResultArr[0]) + parseFloat(splitResultArr[1]);
-    displayResult.innerHTML = resultOfArr;
-    resultOfArr = String(resultOfArr);
-    listOfArr = [];
-
-    (_listOfArr14 = listOfArr).push.apply(_listOfArr14, _toConsumableArray(resultOfArr));
-
-    resultOfArr = resultOfArr.split("");
-    displayList.innerHTML = listOfArr.join("");
-    console.log(resultOfArr);
-  } else if (resultOfArr.join("").includes("-")) {
-    var _listOfArr15;
-
-    var _splitResultArr10 = resultOfArr.join("").split("-");
-
-    resultOfArr = parseFloat(_splitResultArr10[0]) - parseFloat(_splitResultArr10[1]);
     displayResult.innerHTML = resultOfArr;
     resultOfArr = String(resultOfArr);
     listOfArr = [];
@@ -324,12 +323,12 @@ var calcResult = function calcResult() {
     resultOfArr = resultOfArr.split("");
     displayList.innerHTML = listOfArr.join("");
     console.log(resultOfArr);
-  } else if (resultOfArr.join("").includes("*")) {
+  } else if (resultOfArr.join("").includes("-")) {
     var _listOfArr16;
 
-    var _splitResultArr11 = resultOfArr.join("").split("*");
+    var _splitResultArr10 = resultOfArr.join("").split("-");
 
-    resultOfArr = parseFloat(_splitResultArr11[0]) * parseFloat(_splitResultArr11[1]);
+    resultOfArr = parseFloat(_splitResultArr10[0]) - parseFloat(_splitResultArr10[1]);
     displayResult.innerHTML = resultOfArr;
     resultOfArr = String(resultOfArr);
     listOfArr = [];
@@ -339,8 +338,23 @@ var calcResult = function calcResult() {
     resultOfArr = resultOfArr.split("");
     displayList.innerHTML = listOfArr.join("");
     console.log(resultOfArr);
-  } else if (resultOfArr.join("").includes("/")) {
+  } else if (resultOfArr.join("").includes("*")) {
     var _listOfArr17;
+
+    var _splitResultArr11 = resultOfArr.join("").split("*");
+
+    resultOfArr = parseFloat(_splitResultArr11[0]) * parseFloat(_splitResultArr11[1]);
+    displayResult.innerHTML = resultOfArr;
+    resultOfArr = String(resultOfArr);
+    listOfArr = [];
+
+    (_listOfArr17 = listOfArr).push.apply(_listOfArr17, _toConsumableArray(resultOfArr));
+
+    resultOfArr = resultOfArr.split("");
+    displayList.innerHTML = listOfArr.join("");
+    console.log(resultOfArr);
+  } else if (resultOfArr.join("").includes("/")) {
+    var _listOfArr18;
 
     var _splitResultArr12 = resultOfArr.join("").split("/");
 
@@ -349,7 +363,7 @@ var calcResult = function calcResult() {
     resultOfArr = String(resultOfArr);
     listOfArr = [];
 
-    (_listOfArr17 = listOfArr).push.apply(_listOfArr17, _toConsumableArray(resultOfArr));
+    (_listOfArr18 = listOfArr).push.apply(_listOfArr18, _toConsumableArray(resultOfArr));
 
     resultOfArr = resultOfArr.split("");
     displayList.innerHTML = listOfArr.join("");
