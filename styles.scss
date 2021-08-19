@@ -9,19 +9,30 @@ body {
 }
 
 .display{
+  font-family: Arial, Helvetica, sans-serif;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: flex-end;
-  width: 375px;
-  height: 199px;
-  white-space: nowrap;
+  width: 100vw;
+  height: calc(100vh - (100vw * 1.25));
+  color: white;
+  padding: 15px;
+  .display-list{
+    font-size: 24px;
+    height: 60px;
+    word-wrap: normal;
+  }
+  .display-result{
+    font-size: 40px;
+  }
 }
 .keypad {
   display: grid;
   gap: 15px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  width: 375px;
-  height: 468px;
+  width: 100vw;
+  height: calc(100vw * 1.25);
   padding: 15px;
   &__button {
     border-radius: 50%;
@@ -43,5 +54,23 @@ body {
     padding-left: 25px;
     border-radius: 50px;
     grid-column:1 / 2 span; 
+  }
+}
+
+@media only screen and (min-width: 415px) {
+  .calculator {
+    border: 1px solid white;
+    width: 414px;
+  }
+  .display{
+    width: 414px;
+    height: 183px;
+    .display-list{
+      height: 120px;
+    }
+  }
+  .keypad {
+    width: 414px;
+    height: 517px;
   }
 }
