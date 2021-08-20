@@ -44,7 +44,6 @@ const attachSymb = (newSymb) => {
     let splitResultArr = resultOfArr.join("").split("-");
     console.log(splitResultArr);
     if (resultOfArr[0] == "-" && splitResultArr.length === 3) {
-      //resultOfArr.push(...newSymb);
         console.log(resultOfArr);
         resultOfArr = ((-1)*parseFloat(splitResultArr[1])) - parseFloat(splitResultArr[2]);
         displayResult.innerHTML = resultOfArr;
@@ -105,32 +104,8 @@ const negPosResult = () => {
     resultOfArr = resultOfArr.split("");
     displayList.innerHTML = listOfArr.join("");
     console.log(resultOfArr);
-  } else if (resultOfArr.join("").includes("-")) {
-      console.log(resultOfArr);
-      let splitResultArr = resultOfArr.join("").split("-");
-      console.log(splitResultArr);
-      if (splitResultArr[0] == "" && splitResultArr.length === 2) {
-        resultOfArr = parseFloat(splitResultArr[1]); 
-        console.log(resultOfArr);
-        displayResult.innerHTML = resultOfArr;
-        resultOfArr = String(resultOfArr);
-        listOfArr = [];
-        listOfArr.push(...resultOfArr);
-        resultOfArr = resultOfArr.split("");
-        displayList.innerHTML = listOfArr.join("");
-        console.log(resultOfArr);
-      } else {
-        console.log(splitResultArr);
-        resultOfArr = (parseFloat(splitResultArr[0]) - parseFloat(splitResultArr[1]))*(-1);
-        displayResult.innerHTML = resultOfArr;
-        resultOfArr = String(resultOfArr);
-        listOfArr = [];
-        listOfArr.push(...resultOfArr);
-        resultOfArr = resultOfArr.split("");
-        displayList.innerHTML = listOfArr.join("");
-        console.log(resultOfArr);
-    }
-  } else if (resultOfArr.join("").includes("*")) {
+  } 
+    else if (resultOfArr.join("").includes("*")) {
     let splitResultArr = resultOfArr.join("").split("*");
     resultOfArr = (parseFloat(splitResultArr[0]) * parseFloat(splitResultArr[1]))*(-1);
     displayResult.innerHTML = resultOfArr;
@@ -150,7 +125,45 @@ const negPosResult = () => {
       resultOfArr = resultOfArr.split("");
       displayList.innerHTML = listOfArr.join("");
       console.log(resultOfArr);
-  } else {
+  } 
+  else if (resultOfArr.join("").includes("-")) {
+    console.log(resultOfArr);
+    let splitResultArr = resultOfArr.join("").split("-");
+    console.log(splitResultArr);
+    if ((splitResultArr[0] == "" && splitResultArr.length === 2) && (!resultOfArr.join("").includes("+") && !resultOfArr.join("").includes("*") && !resultOfArr.join("").includes("/"))) {
+      resultOfArr = parseFloat(splitResultArr[1]); 
+      console.log(resultOfArr);
+      displayResult.innerHTML = resultOfArr;
+      resultOfArr = String(resultOfArr);
+      listOfArr = [];
+      listOfArr.push(...resultOfArr);
+      resultOfArr = resultOfArr.split("");
+      displayList.innerHTML = listOfArr.join("");
+      console.log(resultOfArr);
+    } 
+    else if (splitResultArr[0] == "" && splitResultArr.length === 3) {
+      console.log(splitResultArr);
+      resultOfArr = (((-1)*parseFloat(splitResultArr[1])) - parseFloat(splitResultArr[2]))*(-1);
+      displayResult.innerHTML = resultOfArr;
+      resultOfArr = String(resultOfArr);
+      listOfArr = [];
+      listOfArr.push(...resultOfArr);
+      resultOfArr = resultOfArr.split("");
+      displayList.innerHTML = listOfArr.join("");
+      console.log(resultOfArr);
+  } else if (splitResultArr[0] !== "") {
+    console.log(splitResultArr);
+    resultOfArr = (parseFloat(splitResultArr[0]) - parseFloat(splitResultArr[1]))*(-1);
+    displayResult.innerHTML = resultOfArr;
+    resultOfArr = String(resultOfArr);
+    listOfArr = [];
+    listOfArr.push(...resultOfArr);
+    resultOfArr = resultOfArr.split("");
+    displayList.innerHTML = listOfArr.join("");
+    console.log(resultOfArr);
+    }
+  }
+  else {
       resultOfArr = parseFloat(resultOfArr.join("")) * (-1);
       displayResult.innerHTML = resultOfArr;
       resultOfArr = String(resultOfArr);
