@@ -39,6 +39,31 @@ const attachDot = (newNum) => {
   console.log(resultOfArr);
 };
 const attachSymb = (newSymb) => {
+  if (resultOfArr.join("").includes("-")) {
+    console.log(resultOfArr);
+    let splitResultArr = resultOfArr.join("").split("-");
+    console.log(splitResultArr);
+    if (resultOfArr[0] == "-" && splitResultArr.length === 3) {
+      //resultOfArr.push(...newSymb);
+        console.log(resultOfArr);
+        resultOfArr = ((-1)*parseFloat(splitResultArr[1])) - parseFloat(splitResultArr[2]);
+        displayResult.innerHTML = resultOfArr;
+        resultOfArr = String(resultOfArr);
+        resultOfArr = resultOfArr.split("");
+        console.log(resultOfArr);
+    } else if (resultOfArr[0] !== "-" && splitResultArr.length == 2) {
+        console.log(resultOfArr);
+      //listOfArr.push(...newSymb);
+      //displayList.innerHTML = listOfArr.join("");
+    // } else {
+        //let splitResultArr = resultOfArr.join("").split("-");
+        resultOfArr = parseFloat(splitResultArr[0]) - parseFloat(splitResultArr[1]);
+        displayResult.innerHTML = resultOfArr;
+        resultOfArr = String(resultOfArr);
+        resultOfArr = resultOfArr.split("");
+        console.log(resultOfArr);
+      };
+  };
   if (resultOfArr.join("").includes("+")) {
     let splitResultArr = resultOfArr.join("").split("+");
       resultOfArr = parseFloat(splitResultArr[0]) + parseFloat(splitResultArr[1]);
@@ -46,13 +71,21 @@ const attachSymb = (newSymb) => {
       resultOfArr = String(resultOfArr);
       resultOfArr = resultOfArr.split("");
       console.log(resultOfArr);
-  } else if (resultOfArr.join("").includes("-")) {
-      let splitResultArr = resultOfArr.join("").split("-");
-        resultOfArr = parseFloat(splitResultArr[0]) - parseFloat(splitResultArr[1]);
-        displayResult.innerHTML = resultOfArr;
-        resultOfArr = String(resultOfArr);
-        resultOfArr = resultOfArr.split("");
-        console.log(resultOfArr);
+  // } else if (resultOfArr.join("").includes("-")) {
+  //     console.log(resultOfArr);
+  //     if (resultOfArr[0] !== "-") {
+  //       //resultOfArr.push(...newSymb);
+  //       console.log(resultOfArr);
+  //       //listOfArr.push(...newSymb);
+  //       //displayList.innerHTML = listOfArr.join("");
+  //     // } else {
+  //         let splitResultArr = resultOfArr.join("").split("-");
+  //         resultOfArr = parseFloat(splitResultArr[0]) - parseFloat(splitResultArr[1]);
+  //         displayResult.innerHTML = resultOfArr;
+  //         resultOfArr = String(resultOfArr);
+  //         resultOfArr = resultOfArr.split("");
+  //         console.log(resultOfArr);
+  //       };
     } else if (resultOfArr.join("").includes("*")) {
       let splitResultArr = resultOfArr.join("").split("*");
         resultOfArr = parseFloat(splitResultArr[0]) * parseFloat(splitResultArr[1]);
