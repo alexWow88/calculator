@@ -33,7 +33,6 @@ var resultOfArr = [];
 var listOfArr = [];
 var newNum = [];
 var newSymb = [];
-var finalResult = [];
 
 var attachNum = function attachNum(newNum) {
   var _resultOfArr, _listOfArr;
@@ -409,51 +408,51 @@ var calcResult = function calcResult() {
 };
 
 buttonOne.addEventListener("click", function () {
-  attachNum("1");
+  return attachNum("1");
 });
 buttonTwo.addEventListener("click", function () {
-  attachNum("2");
+  return attachNum("2");
 });
 buttonThree.addEventListener("click", function () {
-  attachNum("3");
+  return attachNum("3");
 });
 buttonFour.addEventListener("click", function () {
-  attachNum("4");
+  return attachNum("4");
 });
 buttonFive.addEventListener("click", function () {
-  attachNum("5");
+  return attachNum("5");
 });
 buttonSix.addEventListener("click", function () {
-  attachNum("6");
+  return attachNum("6");
 });
 buttonSeven.addEventListener("click", function () {
-  attachNum("7");
+  return attachNum("7");
 });
 buttonEight.addEventListener("click", function () {
-  attachNum("8");
+  return attachNum("8");
 });
 buttonNine.addEventListener("click", function () {
-  attachNum("9");
+  return attachNum("9");
 });
 buttonZero.addEventListener("click", function () {
-  attachNum("0");
+  return attachNum("0");
 });
 buttonTimes.addEventListener("click", function () {
-  attachSymb("*");
+  return attachSymb("*");
 });
 buttonMinus.addEventListener("click", function () {
-  attachSymb("-");
+  return attachSymb("-");
 });
 buttonPlus.addEventListener("click", function () {
-  attachSymb("+");
+  return attachSymb("+");
 });
 buttonDivide.addEventListener("click", function () {
-  attachSymb("/");
+  return attachSymb("/");
 });
 buttonClear.addEventListener("click", clearDisplay);
 buttonEquals.addEventListener("click", calcResult);
 buttonDot.addEventListener("click", function () {
-  attachDot(".");
+  return attachDot(".");
 });
 buttonNegPos.addEventListener("click", negPosResult);
 buttonPercent.addEventListener("click", percentResult);
