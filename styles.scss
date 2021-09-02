@@ -18,11 +18,13 @@ body {
   height: calc(100vh - (100vw * 1.25));
   color: white;
   padding: 15px;
+
   .display-list{
     font-size: 24px;
     height: 60px;
     word-wrap: normal;
   }
+
   .display-result{
     font-size: 40px;
   }
@@ -34,6 +36,7 @@ body {
   width: 100vw;
   height: calc(100vw * 1.25);
   padding: 15px;
+
   &__button {
     border-radius: 50%;
     background-color: #333333;
@@ -41,14 +44,17 @@ body {
     font-size: 40px;
     border: 1px solid #333333;
   }
+
   &__divide, &__times, &__minus, &__plus, &__equals{
     background-color: #FF9F23;
     color: white;
   }
+
   &__clear, &__percent, &__negPos {
     background-color: #A5A5A5;
     color: black;
   }
+
   &__0 {
     text-align: start;
     padding-left: 25px;
@@ -65,17 +71,21 @@ body {
     justify-content: center;
     align-items: center;
   }
+
   .calculator {
     border: 1px solid white;
     width: 414px;
   }
+
   .display{
     width: 414px;
     height: 183px;
+
     .display-list{
       height: 120px;
     }
   }
+  
   .keypad {
     width: 414px;
     height: 517px;
