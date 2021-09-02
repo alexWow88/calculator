@@ -1,0 +1,22 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "This is my first draft of an iPhone calculator made on the Nology course.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexWow88/calculator.git"
+  },
+  "author": "Alex Wower",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexWow88/calculator/issues"
+  },
+  "homepage": "https://github.com/alexWow88/calculator#readme",
+  "devDependencies": {
+    "cypress": "^8.3.1"
+  }
+}
