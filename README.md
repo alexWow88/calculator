@@ -119,4 +119,34 @@ const displayResultAndSplitResultsArr = () => {
 }
 ````
 
-## To handle the negative/positive button and equals, much of the same logical thinking just needs to be done. If you are working on creating your own calculator project, go ahead and clone downthe code and take a look at how the rest was done!
+Now that I can handle multiple operations, I want to test it End-to-End to be sure that i do not cause a bug later down the road when I make any changes. For this testing, I used Cypress.
+Se the below test case. Test cases are written in 3 steps: Arrange, Act, Assert. I ARRANGE by accessing the calculator at the below address, then I use the data-cy values I gave all the clickable buttons to ACT and select the operations and numbers I want, and lastly I ASSERT that I should get back a certain value in the results display. 
+
+All oparations have been thoroughly tested including Percent, Negative/Positive, and Clear.
+
+````
+describe('Long operations', () => {
+  it('9 + 3 - 10 * 60 / 5 equals 24', () => {
+    //ARRANGE
+    cy.visit('http://127.0.0.1:5502/index.html');
+    //ACT
+    cy.get('[data-cy=nine]').click();
+    cy.get('[data-cy=plus]').click();
+    cy.get('[data-cy=three]').click();
+    cy.get('[data-cy=minus]').click();
+    cy.get('[data-cy=one]').click();
+    cy.get('[data-cy=zero]').click();
+    cy.get('[data-cy=times]').click();
+    cy.get('[data-cy=six]').click();
+    cy.get('[data-cy=zero]').click();
+    cy.get('[data-cy=divide]').click();
+    cy.get('[data-cy=five]').click();
+    cy.get('[data-cy=equals]').click();
+    //ASSERT
+    cy.get('[data-cy=display-result]').should('have.text', '24')
+  })
+})
+````
+
+
+## To handle the negative/positive button and equals, much of the same logical thinking just needs to be done. If you are working on creating your own calculator project, go ahead and clone downthe code and take a look at how the rest was done including the testing!
