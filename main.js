@@ -35,39 +35,45 @@ const attachDot = (newNum) => {
   listOfArr.push(...newNum);
   displayList.innerHTML = resultOfArr.join("");
 };
+
+const displayResultAndList = () => {
+  displayResult.innerHTML = resultOfArr;
+  resultOfArr = String(resultOfArr);
+  listOfArr = [];
+  listOfArr.push(...resultOfArr);
+  resultOfArr = resultOfArr.split("");
+  displayList.innerHTML = listOfArr.join("");
+}
+
+const displayResultAndSplitResultsArr = () => {
+  displayResult.innerHTML = resultOfArr;
+  resultOfArr = String(resultOfArr);
+  resultOfArr = resultOfArr.split("");
+}
+
 const attachSymb = (newSymb) => {
   if (resultOfArr.join("").includes("-")) {
     let splitResultArr = resultOfArr.join("").split("-");
     if (resultOfArr[0] == "-" && splitResultArr.length === 3) {
         resultOfArr = ((-1)*parseFloat(splitResultArr[1])) - parseFloat(splitResultArr[2]);
-        displayResult.innerHTML = resultOfArr;
-        resultOfArr = String(resultOfArr);
-        resultOfArr = resultOfArr.split("");
+        displayResultAndSplitResultsArr();
     } else if (resultOfArr[0] !== "-" && splitResultArr.length == 2) {
         resultOfArr = parseFloat(splitResultArr[0]) - parseFloat(splitResultArr[1]);
-        displayResult.innerHTML = resultOfArr;
-        resultOfArr = String(resultOfArr);
-        resultOfArr = resultOfArr.split("");
+        displayResultAndSplitResultsArr();
       };
   };
   if (resultOfArr.join("").includes("+")) {
     let splitResultArr = resultOfArr.join("").split("+");
     resultOfArr = parseFloat(splitResultArr[0]) + parseFloat(splitResultArr[1]);
-    displayResult.innerHTML = resultOfArr;
-    resultOfArr = String(resultOfArr);
-    resultOfArr = resultOfArr.split("");
+    displayResultAndSplitResultsArr();
   } else if (resultOfArr.join("").includes("*")) {
       let splitResultArr = resultOfArr.join("").split("*");
       resultOfArr = parseFloat(splitResultArr[0]) * parseFloat(splitResultArr[1]);
-      displayResult.innerHTML = resultOfArr;
-      resultOfArr = String(resultOfArr);
-      resultOfArr = resultOfArr.split("");
+      displayResultAndSplitResultsArr();
     } else if (resultOfArr.join("").includes("/")) {
       let splitResultArr = resultOfArr.join("").split("/");
       resultOfArr = parseFloat(splitResultArr[0]) / parseFloat(splitResultArr[1]);
-      displayResult.innerHTML = resultOfArr;
-      resultOfArr = String(resultOfArr);
-      resultOfArr = resultOfArr.split("");
+      displayResultAndSplitResultsArr();
     }
   resultOfArr.push(...newSymb);
   listOfArr.push(...newSymb);
@@ -83,116 +89,56 @@ const negPosResult = () => {
   if (resultOfArr.join("").includes("+")) {
     let splitResultArr = resultOfArr.join("").split("+");
     resultOfArr = (parseFloat(splitResultArr[0]) + parseFloat(splitResultArr[1]))*(-1);
-    displayResult.innerHTML = resultOfArr;
-    resultOfArr = String(resultOfArr);
-    listOfArr = [];
-    listOfArr.push(...resultOfArr);
-    resultOfArr = resultOfArr.split("");
-    displayList.innerHTML = listOfArr.join("");
+    displayResultAndList();
   } 
     else if (resultOfArr.join("").includes("*")) {
     let splitResultArr = resultOfArr.join("").split("*");
     resultOfArr = (parseFloat(splitResultArr[0]) * parseFloat(splitResultArr[1]))*(-1);
-    displayResult.innerHTML = resultOfArr;
-    resultOfArr = String(resultOfArr);
-    listOfArr = [];
-    listOfArr.push(...resultOfArr);
-    resultOfArr = resultOfArr.split("");
-    displayList.innerHTML = listOfArr.join("");
+    displayResultAndList();
   } else if (resultOfArr.join("").includes("/")) {
       let splitResultArr = resultOfArr.join("").split("/");
       resultOfArr = (parseFloat(splitResultArr[0]) / parseFloat(splitResultArr[1]))*(-1);
-      displayResult.innerHTML = resultOfArr;
-      resultOfArr = String(resultOfArr);
-      listOfArr = [];
-      listOfArr.push(...resultOfArr);
-      resultOfArr = resultOfArr.split("");
-      displayList.innerHTML = listOfArr.join("");
+      displayResultAndList();
   } 
   else if (resultOfArr.join("").includes("-")) {
     let splitResultArr = resultOfArr.join("").split("-");
     if ((splitResultArr[0] == "" && splitResultArr.length === 2) && (!resultOfArr.join("").includes("+") && !resultOfArr.join("").includes("*") && !resultOfArr.join("").includes("/"))) {
       resultOfArr = parseFloat(splitResultArr[1]); 
-      displayResult.innerHTML = resultOfArr;
-      resultOfArr = String(resultOfArr);
-      listOfArr = [];
-      listOfArr.push(...resultOfArr);
-      resultOfArr = resultOfArr.split("");
-      displayList.innerHTML = listOfArr.join("");
+      displayResultAndList();
     } 
     else if (splitResultArr[0] == "" && splitResultArr.length === 3) {
       resultOfArr = (((-1)*parseFloat(splitResultArr[1])) - parseFloat(splitResultArr[2]))*(-1);
-      displayResult.innerHTML = resultOfArr;
-      resultOfArr = String(resultOfArr);
-      listOfArr = [];
-      listOfArr.push(...resultOfArr);
-      resultOfArr = resultOfArr.split("");
-      displayList.innerHTML = listOfArr.join("");
+      displayResultAndList();
   } else if (splitResultArr[0] !== "") {
     resultOfArr = (parseFloat(splitResultArr[0]) - parseFloat(splitResultArr[1]))*(-1);
-    displayResult.innerHTML = resultOfArr;
-    resultOfArr = String(resultOfArr);
-    listOfArr = [];
-    listOfArr.push(...resultOfArr);
-    resultOfArr = resultOfArr.split("");
-    displayList.innerHTML = listOfArr.join("");
+    displayResultAndList();
     }
   }
   else {
       resultOfArr = parseFloat(resultOfArr.join("")) * (-1);
-      displayResult.innerHTML = resultOfArr;
-      resultOfArr = String(resultOfArr);
-      listOfArr = [];
-      listOfArr.push(...resultOfArr);
-      resultOfArr = resultOfArr.split("");
-      displayList.innerHTML = listOfArr.join("");
+      displayResultAndList();
   }
 };
 const percentResult = () => {
   if (resultOfArr.join("").includes("+")) {
     let splitResultArr = resultOfArr.join("").split("+");
       resultOfArr = (parseFloat(splitResultArr[0]) + parseFloat(splitResultArr[1]))*100;
-      displayResult.innerHTML = resultOfArr;
-      resultOfArr = String(resultOfArr);
-      listOfArr = [];
-      listOfArr.push(...resultOfArr);
-      resultOfArr = resultOfArr.split("");
-      displayList.innerHTML = listOfArr.join("");
+      displayResultAndList();
   } else if (resultOfArr.join("").includes("-")) {
     let splitResultArr = resultOfArr.join("").split("-");
       resultOfArr = (parseFloat(splitResultArr[0]) - parseFloat(splitResultArr[1]))*100;
-      displayResult.innerHTML = resultOfArr;
-      resultOfArr = String(resultOfArr);
-      listOfArr = [];
-      listOfArr.push(...resultOfArr);
-      resultOfArr = resultOfArr.split("");
-      displayList.innerHTML = listOfArr.join("");
+      displayResultAndList();
   } else if (resultOfArr.join("").includes("*")) {
     let splitResultArr = resultOfArr.join("").split("*");
       resultOfArr = (parseFloat(splitResultArr[0]) * parseFloat(splitResultArr[1]))*100;
-      displayResult.innerHTML = resultOfArr;
-      resultOfArr = String(resultOfArr);
-      listOfArr = [];
-      listOfArr.push(...resultOfArr);
-      resultOfArr = resultOfArr.split("");
-      displayList.innerHTML = listOfArr.join("");
+      displayResultAndList();
   } else if (resultOfArr.join("").includes("/")) {
     let splitResultArr = resultOfArr.join("").split("/");
       resultOfArr = (parseFloat(splitResultArr[0]) / parseFloat(splitResultArr[1]))*100;
-      displayResult.innerHTML = resultOfArr;
-      resultOfArr = String(resultOfArr);
-      listOfArr = [];
-      listOfArr.push(...resultOfArr);
-      resultOfArr = resultOfArr.split("");
-      displayList.innerHTML = listOfArr.join("");
+      displayResultAndList();
   } else {
       resultOfArr = parseFloat(resultOfArr.join("")) * 100;
-      displayResult.innerHTML = resultOfArr;
-      resultOfArr = String(resultOfArr);
-      listOfArr = [];
-      listOfArr.push(...resultOfArr);
-      resultOfArr = resultOfArr.split("");
-      displayList.innerHTML = listOfArr.join("");
+      displayResultAndList();
   }
 };
 const calcResult = () => {
@@ -200,50 +146,25 @@ const calcResult = () => {
     let splitResultArr = resultOfArr.join("").split("-");
     if (resultOfArr[0] == "-" && splitResultArr.length === 3) {
         resultOfArr = ((-1)*parseFloat(splitResultArr[1])) - parseFloat(splitResultArr[2]);
-        displayResult.innerHTML = resultOfArr;
-        resultOfArr = String(resultOfArr);
-        listOfArr = [];
-        listOfArr.push(...resultOfArr);
-        displayList.innerHTML = listOfArr.join("");
-        resultOfArr = resultOfArr.split("");
+        displayResultAndList();
     } else if (resultOfArr[0] !== "-" && splitResultArr.length == 2) {
         resultOfArr = parseFloat(splitResultArr[0]) - parseFloat(splitResultArr[1]);
-        displayResult.innerHTML = resultOfArr;
-        resultOfArr = String(resultOfArr);
-        listOfArr = [];
-        listOfArr.push(...resultOfArr);
-        displayList.innerHTML = listOfArr.join("");
-        resultOfArr = resultOfArr.split("");
+        displayResultAndList();
       };
   };
   if (resultOfArr.join("").includes("+")) {
     let splitResultArr = resultOfArr.join("").split("+");
       resultOfArr = parseFloat(splitResultArr[0]) + parseFloat(splitResultArr[1]);
-      displayResult.innerHTML = resultOfArr;
-      resultOfArr = String(resultOfArr);
-      listOfArr = [];
-      listOfArr.push(...resultOfArr);
-      resultOfArr = resultOfArr.split("");
-      displayList.innerHTML = listOfArr.join("");
+      displayResultAndList();
   } 
   else if (resultOfArr.join("").includes("*")) {
     let splitResultArr = resultOfArr.join("").split("*");
       resultOfArr = parseFloat(splitResultArr[0]) * parseFloat(splitResultArr[1]);
-      displayResult.innerHTML = resultOfArr;
-      resultOfArr = String(resultOfArr);
-      listOfArr = [];
-      listOfArr.push(...resultOfArr);
-      resultOfArr = resultOfArr.split("");
-      displayList.innerHTML = listOfArr.join("");
+      displayResultAndList();
   } else if (resultOfArr.join("").includes("/")) {
     let splitResultArr = resultOfArr.join("").split("/");
       resultOfArr = parseFloat(splitResultArr[0]) / parseFloat(splitResultArr[1]);
-      displayResult.innerHTML = resultOfArr;
-      resultOfArr = String(resultOfArr);
-      listOfArr = [];
-      listOfArr.push(...resultOfArr);
-      resultOfArr = resultOfArr.split("");
-      displayList.innerHTML = listOfArr.join("");
+      displayResultAndList();
   }
 };
 
