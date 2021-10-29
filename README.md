@@ -5,7 +5,7 @@ A recreation of the iPhone calculator. All the basic calculator functionality yo
 ## General Info 
 I made this during week 3 of my software development course at _nology. 
 
-This basic calculator comes with its challenges when coding. Functions must be written to handle on click events and handle the computations regardless of what other numbers or operators have already been clicked. Some clever play with Arrays, Strings, splits, and if statements to get it to cover all the bases.
+This basic calculator comes with its challenges when coding. Functions must be written to handle On Click Events and handle the computations regardless of what other numbers or operators have already been clicked. Some clever play with Arrays, Strings, Splits, and If Statements to get it to cover all the bases.
 All operations have been thoroughly End-to-End Tested using Cypress.
 
 ## Technologies used
@@ -25,7 +25,7 @@ This calculator can handle all the basic operations of your typical cell phone c
 * Percentage value of the result in the display
 
 ## Under the Hood
-The layout is the least complex bit of remaking the iPhone calculator. A div for the displays and a div for all the buttons. A grid was used to arrange the buttons to look the way they do on the iPhone. A media query handles when the display screen is larger than a cell phones to ensure the calculator will only reach a maximum size and not get stretched by the display.
+The layout is the least complex bit of remaking the iPhone calculator. A div for the displays and a div for all the buttons. A grid was used to arrange the buttons in 4 columns as they are on the iPhone. A media query handles when the display screen is larger than a cell phone to ensure the calculator will only reach a maximum size and not get stretched by the display.
 ````javascript
 <div class="calculator">
     <div id="display" class="display">
@@ -39,7 +39,7 @@ The layout is the least complex bit of remaking the iPhone calculator. A div for
       <button id="button-divide" class="keypad__button keypad__divide" data-cy="divide">/</button>
 ````
 On the Javascript side of things, at the top of the Javascript file, the buttons and displays are selected with the use of document.querySelector and document.getElementById.
-At the bottom, Event Listeners are added to each of these elements to trigger the necessary functions to run
+At the bottom, Event Listeners are added to each of these elements to trigger the necessary functions to run.
 
 ````javascript
 const displayList = document.querySelector(".display-list");
@@ -55,7 +55,7 @@ buttonMinus.addEventListener("click", () => attachSymb("-"));
 ...
 ````
 
-Now that the buttons can now be pressed and are triggering functions to run, it is just a matter of making sure the function can handle all posibile valid inputs (adding and then subtracting, handling negative values, etc.) and array manipulation.
+Now that the buttons can now be pressed and are triggering functions to run, it is just a matter of making sure the function can handle all possible valid inputs (adding and then subtracting, handling negative values, etc.) and array manipulation.
 
 To enable numbers being able to print into both displays, empty array variables are created and functions are triggered to push the new pressed number into the array.
 ````javascript
@@ -119,8 +119,8 @@ const displayResultAndSplitResultsArr = () => {
 }
 ````
 
-Now that I can handle multiple operations, I want to test it End-to-End to be sure that i do not cause a bug later down the road when I make any changes. For this testing, I used Cypress.
-Se the below test case. Test cases are written in 3 steps: Arrange, Act, Assert. I ARRANGE by accessing the calculator at the below address, then I use the data-cy values I gave all the clickable buttons to ACT and select the operations and numbers I want, and lastly I ASSERT that I should get back a certain value in the results display. 
+Now that I can handle multiple operations, I want to test it End-to-End to be sure that I do not cause a bug later down the road when I make any changes. For this testing, I used Cypress.
+See the below test case. Test cases are written in 3 steps: Arrange, Act, Assert. I ARRANGE by accessing the calculator at the below address, then I use the data-cy values I gave all the clickable buttons to ACT and select the operations and numbers I want, and lastly I ASSERT that I should get back a certain value in the results display. 
 
 All oparations have been thoroughly tested including Percent, Negative/Positive, and Clear.
 
