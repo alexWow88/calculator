@@ -7,13 +7,13 @@ describe('My First Test', function () {
 });
 describe('The Main Page', function () {
   it('successfully loads', function () {
-    cy.visit('http://127.0.0.1:5502/index.html');
+    cy.visit('http://127.0.0.1:5503/index.html');
   });
 });
 describe('Basic operations', function () {
   it('7 + 2 equals 9', function () {
     //ARRANGE
-    cy.visit('http://127.0.0.1:5502/index.html'); //ACT
+    cy.visit('http://127.0.0.1:5503/index.html'); //ACT
 
     cy.get('[data-cy=seven]').click();
     cy.get('[data-cy=plus]').click();
@@ -26,7 +26,7 @@ describe('Basic operations', function () {
 describe('Long operations', function () {
   it('9 + 3 - 10 * 60 / 5 equals 24', function () {
     //ARRANGE
-    cy.visit('http://127.0.0.1:5502/index.html'); //ACT
+    cy.visit('http://127.0.0.1:5503/index.html'); //ACT
 
     cy.get('[data-cy=nine]').click();
     cy.get('[data-cy=plus]').click();
@@ -47,7 +47,7 @@ describe('Long operations', function () {
 describe('Long operations show in the second display', function () {
   it('9 + 3 - 10 * 60 / 5 show in the list display', function () {
     //ARRANGE
-    cy.visit('http://127.0.0.1:5502/index.html'); //ACT
+    cy.visit('http://127.0.0.1:5503/index.html'); //ACT
 
     cy.get('[data-cy=nine]').click();
     cy.get('[data-cy=plus]').click();
@@ -67,7 +67,7 @@ describe('Long operations show in the second display', function () {
 describe('% is working', function () {
   it('% is working', function () {
     //ARRANGE
-    cy.visit('http://127.0.0.1:5502/index.html'); //ACT
+    cy.visit('http://127.0.0.1:5503/index.html'); //ACT
 
     cy.get('[data-cy=zero]').click();
     cy.get('[data-cy=dot]').click();
@@ -82,7 +82,7 @@ describe('% is working', function () {
 describe('+/- is working in results display', function () {
   it('+/- is working in results display', function () {
     //ARRANGE
-    cy.visit('http://127.0.0.1:5502/index.html'); //ACT
+    cy.visit('http://127.0.0.1:5503/index.html'); //ACT
 
     cy.get('[data-cy=zero]').click();
     cy.get('[data-cy=dot]').click();
@@ -97,7 +97,7 @@ describe('+/- is working in results display', function () {
 describe('+/- is working in list display', function () {
   it('+/- is working in list display', function () {
     //ARRANGE
-    cy.visit('http://127.0.0.1:5502/index.html'); //ACT
+    cy.visit('http://127.0.0.1:5503/index.html'); //ACT
 
     cy.get('[data-cy=zero]').click();
     cy.get('[data-cy=dot]').click();
@@ -112,7 +112,7 @@ describe('+/- is working in list display', function () {
 describe('AC is working in list display', function () {
   it('AC is working in list display', function () {
     //ARRANGE
-    cy.visit('http://127.0.0.1:5502/index.html'); //ACT
+    cy.visit('http://127.0.0.1:5503/index.html'); //ACT
 
     cy.get('[data-cy=zero]').click();
     cy.get('[data-cy=dot]').click();
@@ -131,7 +131,7 @@ describe('AC is working in list display', function () {
 describe('AC is working in results display', function () {
   it('AC is working in results display', function () {
     //ARRANGE
-    cy.visit('http://127.0.0.1:5502/index.html'); //ACT
+    cy.visit('http://127.0.0.1:5503/index.html'); //ACT
 
     cy.get('[data-cy=zero]').click();
     cy.get('[data-cy=dot]').click();
@@ -153,7 +153,7 @@ describe('AC is working in results display', function () {
 describe('Division is working in results display', function () {
   it('Division is working in results display', function () {
     //ARRANGE
-    cy.visit('http://127.0.0.1:5502/index.html'); //ACT
+    cy.visit('http://127.0.0.1:5503/index.html'); //ACT
 
     cy.get('[data-cy=nine]').click();
     cy.get('[data-cy=five]').click();
@@ -171,7 +171,7 @@ describe('Division is working in results display', function () {
 describe('Division is working in list display', function () {
   it('Division is working in list display', function () {
     //ARRANGE
-    cy.visit('http://127.0.0.1:5502/index.html'); //ACT
+    cy.visit('http://127.0.0.1:5503/index.html'); //ACT
 
     cy.get('[data-cy=nine]').click();
     cy.get('[data-cy=five]').click();
@@ -189,7 +189,7 @@ describe('Division is working in list display', function () {
 describe('Multiply is working in list display', function () {
   it('Multiply is working in list display', function () {
     //ARRANGE
-    cy.visit('http://127.0.0.1:5502/index.html'); //ACT
+    cy.visit('http://127.0.0.1:5503/index.html'); //ACT
 
     cy.get('[data-cy=nine]').click();
     cy.get('[data-cy=five]').click();
@@ -210,7 +210,7 @@ describe('Multiply is working in list display', function () {
 describe('Multiply is working in result display', function () {
   it('Multiply is working in result display', function () {
     //ARRANGE
-    cy.visit('http://127.0.0.1:5502/index.html'); //ACT
+    cy.visit('http://127.0.0.1:5503/index.html'); //ACT
 
     cy.get('[data-cy=nine]').click();
     cy.get('[data-cy=five]').click();

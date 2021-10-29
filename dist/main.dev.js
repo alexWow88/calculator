@@ -57,8 +57,15 @@ var attachDot = function attachDot(newNum) {
 var displayResultAndList = function displayResultAndList() {
   var _listOfArr3;
 
-  displayResult.innerHTML = resultOfArr;
   resultOfArr = String(resultOfArr);
+
+  if (resultOfArr.length > 14) {
+    displayResult.innerHTML = resultOfArr.substring(0, 13);
+  } else {
+    displayResult.innerHTML = resultOfArr;
+  }
+
+  ;
   listOfArr = [];
 
   (_listOfArr3 = listOfArr).push.apply(_listOfArr3, _toConsumableArray(resultOfArr));
@@ -68,8 +75,15 @@ var displayResultAndList = function displayResultAndList() {
 };
 
 var displayResultAndSplitResultsArr = function displayResultAndSplitResultsArr() {
-  displayResult.innerHTML = resultOfArr;
   resultOfArr = String(resultOfArr);
+
+  if (resultOfArr.length > 15) {
+    displayResult.innerHTML = resultOfArr.substring(0, 14);
+  } else {
+    displayResult.innerHTML = resultOfArr;
+  }
+
+  ;
   resultOfArr = resultOfArr.split("");
 };
 
